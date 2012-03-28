@@ -6,4 +6,4 @@ The aim of this test is to have a grid of items using media queries to change th
 * Plays nice with items of various lengths
 * Alleviates [the whitespace bug between items](http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/)
 * Tested in all modern browsers and in IE >= 7 (slight float drops in IE7 upon window resize but I can live with that)
-* Uses [selectivizr.js](https://github.com/keithclark/selectivizr) and [respond.js](https://github.com/scottjehl/Respond) to get support for CSS3 selectors and screen-size based media-queries in IE
+* Uses [selectivizr.js](https://github.com/keithclark/selectivizr) and [respond.js](https://github.com/scottjehl/Respond) to get support for CSS3 selectors and screen-size based media-queries in IE >=7
