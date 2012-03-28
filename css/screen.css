@@ -1,0 +1,141 @@
+/*
+
+Mobile First item grid using display:inline-block; for items
+
+- Reflows depending on the available width (4 items per row > 3 items per row > 2 items per row)
+- Prevent the whitespace bug between items
+- Tested in all modern browsers and in IE >= 7
+- Uses selectivizr and respond to get support for CSS3 selectors and screen-size based media-queries 
+- Demo available at: http://www.g-rom.be/reflowing_item_grid/ (or .zip attached)
+
+*/
+
+body
+{
+	font:normal 14px/1.5 Helvetica, Arial, sans-serif;
+	background:#fcf9f5;
+	color:#000;
+	margin:2em;
+}
+
+#pagewrapper
+{
+	margin:0 auto;
+	padding:0 4.3478261%;
+}
+
+/* =Grids
+reflowing grids of items
+###########################################*/
+.grid
+{
+	width:100%;
+	background:green;
+	list-style:none;
+	margin:0;
+	padding:0;
+	font-family: "Courier New", monospace; /*switch to monospace for the whitespace hack to work consistently*/
+	letter-spacing: -0.55em; /* webkit: collapse whitespace between units */
+	word-spacing: -0.1em; /* IE < 8 && gecko: collapse whitespace between units */
+}
+
+.lt-ie8 .grid
+{
+	letter-spacing: normal; /* reset IE < 8 */
+}
+
+.gridunit
+{
+	display:inline-block;
+	vertical-align:top;
+	width:47.826087%; /*440/920*/
+	margin:0 4.3478261% 3em 0; /*40/920*/
+	font-family: "open-sans", Helvetica, sans-serif; /*restore non-monospace font in grid units*/
+	letter-spacing: normal;
+	word-spacing: normal;
+	background:yellow;
+}
+
+.gridunit:nth-child(2n)
+{
+	background:red;
+	margin-right:0;
+}
+
+.lt-ie8 .gridunit
+{
+	min-height:1px; /*triggers haslayout for ie < 8*/
+	display:inline; /*faking inline-block behavious for IE < 8*/
+}
+
+@media screen and (min-width:760px) {
+
+	/*bumping down the font size*/
+	body
+	{
+		font-size:80%;
+	}
+
+	/*Grid of items: 3 units per row*/
+	.gridunit, .gridunit:nth-child(2n)
+	{
+		width:30.4347826%; /*280/920*/
+		margin-right:4.3478261%; /*40/920*/
+		background:yellow;
+	}
+
+	.gridunit:nth-child(3n)
+	{
+		background:red;
+		margin-right:0;
+	}
+
+}
+
+@media screen and (min-width:1000px), only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape){
+	
+	#pagewrapper
+	{
+		max-width:1000px;
+	}
+
+	/*Grid of items: 4 units per row*/
+	.gridunit, .gridunit:nth-child(2n), .gridunit:nth-child(3n)
+	{
+		width:21.7391304%; /*200/920*/
+		margin-right:4.3478261%; /*40/920*/
+		background:yellow;
+	}
+
+	.gridunit:nth-child(4n)
+	{
+		background:red;
+		margin-right:0;
+	}
+
+}
+
+/* =Fluid Images
+The bicubic interpolation for IE is dealt with in normalize.css
+###########################################*/
+.imgholder img
+{
+	max-width:100%;
+}
+
+/* =Clearing Floats
+<http://oncemade.com/renaming-and-extending-easy-clearing-aka-clearfix/>
+###########################################*/
+.group:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.lt-ie8 .group
+{
+	min-height: 1px;
+}

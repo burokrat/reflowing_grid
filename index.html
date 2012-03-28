@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	
+	<title>Reflowing Inline-block Grid</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" media="screen" href="css/normalize.css" />
+	<link rel="stylesheet" media="screen" href="css/screen.css" />
+
+	<!-- JS (modernizr only in the head, rest of script at the bottom) -->
+	<script src="js/modernizr.min.js"></script>
+	
+</head>
+<body>
+	<div id="pagewrapper" class="group">
+		<hgroup>
+			<h1>Test for reflowing grids using inline-block</h1>
+			<h2>AKA we will be so happy when <a href="http://dev.w3.org/csswg/css3-flexbox/">flexbox</a> is supported accross the board</h2>
+		<hgroup>
+		<p>The aim of this test is to have a grid of items using media queries to change the number of items displayed per row depending on the available screen space. Using floats was not an option, since we have to support items of various lengths.</p>
+		<ul>
+			<li>Uses display:inline-block; and media queries</li>
+			<li>Reflows depending on the available width (4 items per row > 3 items per row > 2 items per row)</li>
+			<li>Plays nice with items of various lengths</li>
+			<li>Prevent the <a href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/">whitespace bug between items</a></li>
+			<li>Tested in all modern browsers and in IE >= 7 (slight float drops in IE7 upon window resize but I can live with that)</li>
+			<li>Uses <a href="https://github.com/keithclark/selectivizr">selectivizr</a> and <a href="https://github.com/scottjehl/Respond">respond</a> to get support for CSS3 selectors and screen-size based media-queries in IE</li> 
+		</ul>
+
+		<ul class="module grid row3">
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 1</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 2</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 3</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis. Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 4</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 5</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 6</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 7</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 8</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 9</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 10</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis. Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis. Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 11</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+			<li class="gridunit">
+				<p class="imgholder"><img src="img/placeholder_16-9.png" /></p>
+				<h3>Block 12</h3>
+				<p>Curabitur mollis nisl id augue placerat vestibulum. Ut varius erat ac enim iaculis convallis. Donec metus eros, malesuada eget tristique eget, pellentesque a dui. Quisque a metus sit amet erat bibendum sagittis</p>
+			</li>
+		</ul>
+
+	</div>
+
+	<!--[if lte IE 9]>
+		<script src="js/domassistant.min.js"></script>
+		<script src="js/selectivizr.min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</body>
+</html>
