@@ -65,7 +65,7 @@ reflowing grids of items
 .lt-ie8 .gridunit
 {
 	min-height:1px; /*triggers haslayout for ie < 8*/
-	display:inline; /*faking inline-block behavious for IE < 8*/
+	display:inline; /*faking inline-block behaviour for IE < 8*/
 }
 
 @media screen and (min-width:760px) {
