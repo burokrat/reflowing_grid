@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
@@ -13,9 +12,9 @@
 	
 	<title>Reflowing Inline-block Grid</title>
 
-	<!-- CSS -->
+	<!-- CSS (dropped support for IE6 > gets unstyled pages) -->
 	<link rel="stylesheet" media="screen" href="css/normalize.css" />
-	<link rel="stylesheet" media="screen" href="css/screen.css" />
+	<!--[if ! lte IE 6]><!--><link rel="stylesheet" media="screen" href="css/screen.css" /><!--<![endif]-->
 
 	<!-- JS (modernizr only in the head, rest of script at the bottom) -->
 	<script src="js/modernizr.min.js"></script>
@@ -102,7 +101,7 @@
 
 	</div>
 
-	<!--[if lte IE 9]>
+	<!--[if (lte IE 9) & (gte IE 7)]>
 		<script src="js/domassistant.min.js"></script>
 		<script src="js/selectivizr.min.js"></script>
 		<script src="js/respond.min.js"></script>

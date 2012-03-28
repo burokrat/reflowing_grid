@@ -4,7 +4,7 @@ Mobile First item grid using display:inline-block; for items
 
 - Reflows depending on the available width (4 items per row > 3 items per row > 2 items per row)
 - Prevent the whitespace bug between items
-- Tested in all modern browsers and in IE >= 6 (item srops at certain sizes due to sub pixel rounding but I can live with that)
+- Tested in all modern browsers and in IE >= 7 (items drop at certain sizes due to sub pixel rounding but I can live with that)
 - Uses selectivizr and respond to get support for CSS3 selectors and screen-size based media-queries 
 - Demo available at: http://www.g-rom.be/reflowing_item_grid/ (or .zip attached)
 
@@ -68,40 +68,6 @@ reflowing grids of items
 	display:inline; /*faking inline-block behaviour for IE < 8*/
 }
 
-
-/* =Fluid Images
-The bicubic interpolation for IE is dealt with in normalize.css
-###########################################*/
-.imgholder > img
-{
-	max-width:100%;
-	display:block;
-}
-
-/*fluid images for IE 6 (don't use child selectors for IE6)*/
-.lt-ie7 .imgholder img
-{
-	width:100%;
-}
-
-
-/* =Clearing Floats
-<http://oncemade.com/renaming-and-extending-easy-clearing-aka-clearfix/>
-###########################################*/
-.group:after
-{
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-
-.lt-ie8 .group
-{
-	min-height: 1px;
-}
-
 @media screen and (min-width:760px) {
 
 	/*bumping down the font size*/
@@ -133,12 +99,6 @@ The bicubic interpolation for IE is dealt with in normalize.css
 		max-width:1000px;
 	}
 
-	/*faking max-width for IE 6 (don't use child selectors for IE6)*/
-	.lt-ie7 #pagewrapper
-	{
-		width:1000px;
-	}
-
 	/*Grid of items: 4 units per row*/
 	.gridunit, .gridunit:nth-child(2n), .gridunit:nth-child(3n)
 	{
@@ -153,4 +113,36 @@ The bicubic interpolation for IE is dealt with in normalize.css
 		margin-right:0;
 	}
 
+}
+
+/* =Fluid Images
+The bicubic interpolation for IE is dealt with in normalize.css
+###########################################*/
+.imgholder
+{
+	padding:0;
+	margin:0;
+}
+
+.imgholder > img
+{
+	max-width:100%;
+	display:block;
+}
+
+/* =Clearing Floats
+<http://oncemade.com/renaming-and-extending-easy-clearing-aka-clearfix/>
+###########################################*/
+.group:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.lt-ie8 .group
+{
+	min-height: 1px;
 }
