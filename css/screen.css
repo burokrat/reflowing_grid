@@ -44,7 +44,7 @@ reflowing grids of items
 	letter-spacing: normal; /* reset IE < 8 */
 }
 
-.gridunit
+.item
 {
 	display:inline-block;
 	vertical-align:top;
@@ -56,13 +56,13 @@ reflowing grids of items
 	background:yellow;
 }
 
-.gridunit:nth-child(2n)
+.item:nth-child(2n)
 {
 	background:red;
 	margin-right:0;
 }
 
-.lt-ie8 .gridunit
+.lt-ie8 .item
 {
 	min-height:1px; /*triggers haslayout for ie < 8*/
 	display:inline; /*faking inline-block behaviour for IE < 8*/
@@ -77,14 +77,14 @@ reflowing grids of items
 	}
 
 	/*Grid of items: 3 units per row*/
-	.gridunit, .gridunit:nth-child(2n)
+	.item, .item:nth-child(2n)
 	{
 		width:30.4347826%; /*280/920*/
 		margin-right:4.3478261%; /*40/920*/
 		background:yellow;
 	}
 
-	.gridunit:nth-child(3n)
+	.item:nth-child(3n)
 	{
 		background:red;
 		margin-right:0;
@@ -100,14 +100,14 @@ reflowing grids of items
 	}
 
 	/*Grid of items: 4 units per row*/
-	.gridunit, .gridunit:nth-child(2n), .gridunit:nth-child(3n)
+	.item, .item:nth-child(2n), .item:nth-child(3n)
 	{
 		width:21.7391304%; /*200/920*/
 		margin-right:4.3478261%; /*40/920*/
 		background:yellow;
 	}
 
-	.gridunit:nth-child(4n)
+	.item:nth-child(4n)
 	{
 		background:red;
 		margin-right:0;
@@ -128,21 +128,4 @@ The bicubic interpolation for IE is dealt with in normalize.css
 {
 	max-width:100%;
 	display:block;
-}
-
-/* =Clearing Floats
-<http://oncemade.com/renaming-and-extending-easy-clearing-aka-clearfix/>
-###########################################*/
-.group:after
-{
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-
-.lt-ie8 .group
-{
-	min-height: 1px;
 }
