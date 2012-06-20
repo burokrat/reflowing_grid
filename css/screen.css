@@ -46,7 +46,7 @@ reflowing grids of items
 	display:inline-block;
 	vertical-align:top;
 	width:47.826087%; /*440/920*/
-	margin:0 4.3478261% 3em 0; /*40/920*/
+	margin:0 4.3478261% 4.3478261% 0; /*40/920*/
 	background:yellow;
 	font-size:14px; /*restore font size for browsers not supporting rems*/
 	font-size:1rem; /*restore font size for browsers supporting rems*/
