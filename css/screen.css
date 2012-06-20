@@ -10,9 +10,13 @@ Mobile First item grid using display:inline-block; for items
 
 */
 
+html
+{
+	font:normal 100%/1.5 Helvetica, Arial, sans-serif;
+}
+
 body
 {
-	font:normal 14px/1.5 Helvetica, Arial, sans-serif;
 	background:#fcf9f5;
 	color:#000;
 	margin:2em;
@@ -33,15 +37,8 @@ reflowing grids of items
 	list-style:none;
 	margin:0;
 	padding:0;
-	font-family: "Courier New", monospace; /*switch to monospace for the whitespace hack to work consistently*/
-	letter-spacing: -0.55em; /* webkit: collapse whitespace between units */
-	word-spacing: -0.1em; /* IE < 8 && gecko: collapse whitespace between units */
+	font-size:0; /*eliminates the whitespace between inline-block children items*/
 	background:green;
-}
-
-.lt-ie8 .grid
-{
-	letter-spacing: normal; /* reset IE < 8 */
 }
 
 .item
@@ -50,10 +47,9 @@ reflowing grids of items
 	vertical-align:top;
 	width:47.826087%; /*440/920*/
 	margin:0 4.3478261% 3em 0; /*40/920*/
-	font-family: "open-sans", Helvetica, sans-serif; /*restore non-monospace font in grid units*/
-	letter-spacing: normal;
-	word-spacing: normal;
 	background:yellow;
+	font-size:14px; /*restore font size for browsers not supporting rems*/
+	font-size:1rem; /*restore font size for browsers supporting rems*/
 }
 
 .item:nth-child(2n)
@@ -71,7 +67,7 @@ reflowing grids of items
 @media screen and (min-width:760px) {
 
 	/*bumping down the font size*/
-	body
+	html
 	{
 		font-size:80%;
 	}
