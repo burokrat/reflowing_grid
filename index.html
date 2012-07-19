@@ -31,7 +31,7 @@
 			<li>Uses display:inline-block; and media queries</li>
 			<li>Reflows depending on the available width (4 items per row > 3 items per row > 2 items per row)</li>
 			<li>Plays nice with items of various lengths</li>
-			<li>Prevent the <a href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/">whitespace bug between items</a>.  If you really want to be on the safe side here, use HTML comments to eliminate whitespace or block your begin and end tags together.</li>
+			<li>Prevent the <a href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/">whitespace bug between items</a>. If you really want to be on the safe side here, use HTML comments to eliminate whitespace or block your begin and end tags together. As a safety net, I also use the font-size:0 then restore trick (see code).</li>
 			<li>Tested in all modern browsers and in IE >= 7 (slight float drops in IE7 upon window resize but I can live with that)</li>
 			<li>Uses <a href="https://github.com/keithclark/selectivizr">selectivizr</a> and <a href="https://github.com/scottjehl/Respond">respond</a> to get support for CSS3 selectors and screen-size based media-queries in IE</li> 
 		</ul>
